@@ -38,11 +38,11 @@ prediction = clf.predict(df)
 prediction_proba = clf.predict_proba(df)
 
 st.subheader('Class labels and their corresponding index number')
-st.write(iris.target_names)
+st.write(list(y.rows))
 
 st.subheader('Prediction')
-st.write(list(X.columns)[prediction])
+#st.write(iris.target_names[prediction])
 st.write(prediction)
 
-#st.subheader('Prediction Probability')
+st.subheader('Prediction Probability')
 st.write(prediction_proba)
