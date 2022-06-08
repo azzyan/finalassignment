@@ -28,8 +28,8 @@ st.subheader('User Input parameters')
 st.write(df)
 
 iris = pd.read_csv('https://raw.githubusercontent.com/azzyan/finalassignment/main/IRIS.csv')
-X = iris.data
-Y = iris.target
+X = iris.data.drop('species', axis = 1)
+Y = iris.data['species']
 
 clf = RandomForestClassifier()
 clf.fit(X, Y)
@@ -41,8 +41,8 @@ st.subheader('Class labels and their corresponding index number')
 st.write(iris.target_names)
 
 st.subheader('Prediction')
-st.write(iris.target_names[prediction])
-#st.write(prediction)
+st.write(list(X.columns))
+st.write(prediction)
 
 st.subheader('Prediction Probability')
 st.write(prediction_proba)
