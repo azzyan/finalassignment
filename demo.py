@@ -41,8 +41,8 @@ st.subheader('Class labels and their corresponding index number')
 st.write(list(X.columns))
 
 st.subheader('Prediction')
-st.write(list(X.columns))
-st.write(prediction)
+#.write(iris.target_names[prediction])
+st.write(prediction
 
 st.subheader('Prediction Probability')
 st.write(prediction_proba)
