@@ -28,8 +28,8 @@ st.subheader('User Input parameters')
 st.write(df)
 
 iris = pd.read_csv('https://raw.githubusercontent.com/azzyan/finalassignment/main/IRIS.csv')
-X = iris.data(drop('species', axis = 1))
-Y = iris.target(data['species'])
+X = iris.drop('species', axis = 1)
+Y = iris.data['species']
 
 clf = RandomForestClassifier()
 clf.fit(X, Y)
