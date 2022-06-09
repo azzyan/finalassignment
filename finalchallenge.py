@@ -113,4 +113,4 @@ def add_dataset_ui(choice_name):
 
     return X,y, X_names, X1
 
-X, y , X_names, cat_var= add_dataset_ui (choice)
+X, y , X_names, cat_var= add_dataset_ui (choice_name)
