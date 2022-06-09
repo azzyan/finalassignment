@@ -27,16 +27,26 @@ choice = st.sidebar.radio(
 
 st.write(f"## You Have Selected <font color='Aquamarine'>{choice}</font> Dataset", unsafe_allow_html=True)
 
+example = pd.read_csv(https://raw.githubusercontent.com/azzyan/finalassignment/main/weatherHistory.csv)
+X = example.drop('Daily Summary', axis = 1)
+Y = example['Daily Summary']
+
 def get_default_dataset(name):
-    data = None
-    if name == 'Iris':
-        data = datasets.load_iris()
-    elif name == 'Wine':
-        data = datasets.load_wine()
+    example = pd.read_csv(https://raw.githubusercontent.com/azzyan/finalassignment/main/weatherHistory.csv)
+    
+    if name == 'Summary':
+        example = datasets.Summary()
+    elif name == 'Precip Type':
+        data = datasets.Precip_Type()
+    elif name == 'Temperature (C)':
+        data = datasets.(Temperature (C))()
+   
     else:
-        data = datasets.load_breast_cancer()
-    X = data.data
-    y = data.target
+        name == 'Pressure (millibars)':
+        example = datasets.(Pressure_(millibars))()
+        
+    X = example.drop('Daily Summary', axis = 1)
+    y = example['Daily Summary']
     return X, y
 
 def add_dataset_ui(choice_name):
