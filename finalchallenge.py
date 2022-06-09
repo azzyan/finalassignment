@@ -35,10 +35,10 @@ st.write(f"## You Have Selected <font color='Aquamarine'>{choice}</font> Dataset
 
 def get_default_dataset(name):
     data = None
-    if name == 'Fixed Acidity':
-        data = datasets.fixed_acidity()
+    if name == 'fixed acidity':
+        data = datasets.load_fixed_acidity()
     elif name == 'volatile acidity':
-        data = datasets.load_volatile_acidity()
+        data = datasets.volatile_acidity()
     elif name == 'citric acid':
         data = datasets.load_citric_acid()
     elif name == 'residual sugar':
@@ -69,7 +69,7 @@ def add_dataset_ui(choice_name):
     if choice_name == 'Default':
        dataset_name = st.sidebar.selectbox(
             'Select Dataset',
-            ('Fixed Acidity', 'volatile acidity', 'citric acid', 'residual sugar', 'chlorides', 'free sulfur dioxide', 'total sulfur dioxide', 'density', 'pH', 'sulphates', 'alcohol')
+            ('fixed acidity', 'volatile acidity', 'citric acid', 'residual sugar', 'chlorides', 'free sulfur dioxide', 'total sulfur dioxide', 'density', 'pH', 'sulphates', 'alcohol')
         )
        X, y = get_default_dataset (dataset_name)
        X_names = X
