@@ -3,7 +3,6 @@ import numpy as np
 import pandas as pd
 import seaborn as sns
 
-#import matplotlib.pyplot as plt
 from matplotlib import pyplot as plt
 from sklearn import datasets
 from sklearn.model_selection import train_test_split
@@ -23,22 +22,10 @@ This is a web app demo using python libraries such as Streamlit, Sklearn etc
 
 choice = st.sidebar.radio(
     "Choose a dataset",   
-    ('Example 1', 'Example 2', 'User-defined '),
+    ('defult',  'User-defined '),
     index = 0 )
 
 st.write(f"## You Have Selected <font color='Aquamarine'>{choice}</font> Dataset", unsafe_allow_html=True)
-
-def get_default_dataset(name):
-    data = None
-    if name == 'Iris':
-        data = datasets.load_iris()
-    elif name == 'Wine':
-        data = datasets.load_wine()
-    else:
-        data = datasets.load_breast_cancer()
-    X = data.data
-    y = data.target
-    return X, y
 
 def get_default_dataset(name):
     data = None
