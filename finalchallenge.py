@@ -56,7 +56,7 @@ def get_default_dataset(name):
     else:
         data = datasets.load_alcohol()
     X = data.data
-    y = data.target
+    y = data.quality
     return X, y
 
 def add_dataset_ui(choice_name):
