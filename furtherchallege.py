@@ -3,6 +3,11 @@ import pandas as pd
 
 from sklearn.ensemble import RandomForestClassifier
 
+from PIL import Image
+image = Image.open('irisflower.jpg')
+
+st.image(image, caption='Iris Flower')
+
 st.write("""
 # Simple Iris Flower Prediction App
 This app predicts the *Iris flower* type!
