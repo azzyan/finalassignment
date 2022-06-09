@@ -28,7 +28,7 @@ st.subheader('User Input parameters')
 st.write(df)
 
 iris = pd.read_csv('https://raw.githubusercontent.com/azzyan/finalassignment/main/IRIS.csv') 
-feature_cols = ['sepal_length','sepal_width','petal_length','petal_width'
+feature_cols = ['sepal_length','sepal_width','petal_length','petal_width']
 X = iris[feature_cols]
 Y = iris.species
 
