@@ -1,13 +1,12 @@
 import streamlit as st 
 import numpy as np 
 import pandas as pd
-#import seaborn as sns
+import seaborn as sns
 
 from matplotlib import pyplot as plt
-from sklearn import datasets
-from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import LabelEncoder
-from sklearn.preprocessing import StandardScaler
+import plotly.plotly as py
+from plotly.offline import init_notebook_mode, iplotinit_notebook_mode(connected=True)
+import plotly.graph_objs as go
 
 from sklearn.decomposition import PCA
 from sklearn.svm import SVC
