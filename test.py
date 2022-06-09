@@ -67,7 +67,8 @@ def add_dataset_ui(choice_name):
             "Upload a CSV",
             type='csv'    )
         
-         if uploaded_file!=None:
+
+        if uploaded_file!=None:
            
            st.write(uploaded_file)
            data = pd.read_csv(uploaded_file)
@@ -84,4 +85,3 @@ def add_dataset_ui(choice_name):
                      default = sorted(data)[1],
                      help = "You may select more than one predictor"
                      )
-
