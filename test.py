@@ -66,3 +66,22 @@ def add_dataset_ui(choice_name):
         uploaded_file = st.sidebar.file_uploader(
             "Upload a CSV",
             type='csv'    )
+        
+         if uploaded_file!=None:
+           
+           st.write(uploaded_file)
+           data = pd.read_csv(uploaded_file)
+  
+        
+           y_name = st.sidebar.selectbox(
+                    'Select Label @ y variable',
+                    sorted(data)
+                    )
+
+           X_names = st.sidebar.multiselect(
+                     'Select Predictors @ X variables.',
+                     sorted(data),
+                     default = sorted(data)[1],
+                     help = "You may select more than one predictor"
+                     )
+
