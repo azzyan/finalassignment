@@ -40,7 +40,7 @@ prediction_proba = clf.predict_proba(df)
 st.subheader('Class labels and their corresponding index number')
 st.write(list({'setosa','versicolor','virginica'}))
 
-import Image
+from PIL import Image
 image = Image.open('irisflower.jpg')
 
 st.image(image, caption='Iris Flower')
