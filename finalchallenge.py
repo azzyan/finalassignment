@@ -26,8 +26,10 @@ This is a web app demo using python libraries such as Streamlit, Sklearn etc
 
 choice = st.sidebar.radio(
     "Choose a dataset",   
-    ('defult',  'User-defined '),
-    index = 0 )
+    ('Default', 'User-defined '),
+    index = 0
+    
+)
 
 st.write(f"## You Have Selected <font color='Aquamarine'>{choice}</font> Dataset", unsafe_allow_html=True)
 
@@ -73,7 +75,7 @@ def add_dataset_ui(choice_name):
        X_names = X
     else:
         uploaded_file = st.sidebar.file_uploader(
-            "Upload in CSV",
+            "Upload a CSV",
             type='csv'    )
         
 
@@ -112,5 +114,3 @@ def add_dataset_ui(choice_name):
     return X,y, X_names, X1
 
 X, y , X_names, cat_var= add_dataset_ui (choice)
-
-
