@@ -35,25 +35,25 @@ st.write(f"## You Have Selected <font color='Aquamarine'>{choice}</font> Dataset
 
 def get_default_dataset(name):
     data = None
-    if name == 'fixed acidity':
+    if name == 'Fixed acidity':
         data = datasets.fixed_acidity()
-    elif name == 'volatile acidity':
+    elif name == 'Volatile acidity':
         data = datasets.volatile_acidity()
-    elif name == 'citric acid':
+    elif name == 'Citric acid':
         data = datasets.citric_acid()
-    elif name == 'residual sugar':
+    elif name == 'Residual sugar':
         data = datasets.residual_sugar()
-    elif name == 'chlorides':
+    elif name == 'Chlorides':
         data = datasets.chlorides()
-    elif name == 'free sulfur dioxide':
+    elif name == 'Free sulfur dioxide':
         data = datasets.free_sulfur_dioxide()
-    elif name == 'total sulfur dioxide':
+    elif name == 'Total sulfur dioxide':
         data = datasets.total_sulfur_dioxide()    
-    elif name == 'density':
+    elif name == 'Density':
         data = datasets.density() 
     elif name == 'pH':
         data = datasets.pH() 
-    elif name == 'sulphates':
+    elif name == 'Sulphates':
         data = datasets.sulphates() 
     else:
         data = datasets.alcohol()
