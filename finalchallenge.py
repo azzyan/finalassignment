@@ -5,7 +5,6 @@ import seaborn as sns
 
 from matplotlib import pyplot as plt
 import plotly.plotly as py
-from plotly.offline import init_notebook_mode, iplotinit_notebook_mode(connected=True)
 import plotly.graph_objs as go
 
 from sklearn.decomposition import PCA
