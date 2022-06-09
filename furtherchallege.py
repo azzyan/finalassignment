@@ -40,11 +40,6 @@ prediction_proba = clf.predict_proba(df)
 st.subheader('Class labels and their corresponding index number')
 st.write(list({'setosa','versicolor','virginica'}))
 
-from PIL import Image
-image = Image.open('https://raw.githubusercontent.com/azzyan/finalassignment/main/irisflower.jpg')
-
-st.image(image, caption='Iris Flower')
-
 st.subheader('Prediction')
 #.write(iris.target_names[prediction])
 st.write(prediction)
