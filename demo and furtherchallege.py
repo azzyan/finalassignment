@@ -41,7 +41,7 @@ st.subheader('Class labels and their corresponding index number')
 st.write(list({'setosa','versicolor','virginica'}))
 
 from PIL import Image
-image = Image.open('sunrise.jpg')
+image = Image.open('irisflower.jpg')
 
 st.image(image, caption='Iris Flower')
 
