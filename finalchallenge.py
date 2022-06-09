@@ -35,28 +35,28 @@ st.write(f"## You Have Selected <font color='Aquamarine'>{choice}</font> Dataset
 
 def get_default_dataset(name):
     data = None
-    if name == 'Fixed acidity':
-        data = datasets.fixed_acidity()
-    elif name == 'Volatile acidity':
-        data = datasets.volatile_acidity()
-    elif name == 'Citric acid':
-        data = datasets.citric_acid()
-    elif name == 'Residual sugar':
-        data = datasets.residual_sugar()
-    elif name == 'Chlorides':
-        data = datasets.chlorides()
-    elif name == 'Free sulfur dioxide':
-        data = datasets.free_sulfur_dioxide()
-    elif name == 'Total sulfur dioxide':
-        data = datasets.total_sulfur_dioxide()    
-    elif name == 'Density':
-        data = datasets.density() 
+    if name == 'fixed acidity':
+        data = datasets.load_fixed_acidity()
+    elif name == 'volatile acidity':
+        data = datasets.load_volatile_acidity()
+    elif name == 'citric acid':
+        data = datasets.load_citric_acid()
+    elif name == 'residual sugar':
+        data = datasets.load_residual_sugar()
+    elif name == 'chlorides':
+        data = datasets.load_chlorides()
+    elif name == 'free sulfur dioxide':
+        data = datasets.load_free_sulfur_dioxide()
+    elif name == 'total sulfur dioxide':
+        data = datasets.load_total_sulfur_dioxide()    
+    elif name == 'density':
+        data = datasets.load_density() 
     elif name == 'pH':
-        data = datasets.pH() 
-    elif name == 'Sulphates':
-        data = datasets.sulphates() 
+        data = datasets.load_pH() 
+    elif name == 'sulphates':
+        data = datasets.load_sulphates() 
     else:
-        data = datasets.alcohol()
+        data = datasets.load_alcohol()
     X = data.data
     y = data.quality
     return X, y
