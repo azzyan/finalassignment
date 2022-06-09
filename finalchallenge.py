@@ -27,27 +27,31 @@ choice = st.sidebar.radio(
 
 st.write(f"## You Have Selected <font color='Aquamarine'>{choice}</font> Dataset", unsafe_allow_html=True)
 
-example = pd.read_csv(https://raw.githubusercontent.com/azzyan/finalassignment/main/weatherHistory.csv)
-X = example.drop('Daily Summary', axis = 1)
-Y = example['Daily Summary']
-
 def get_default_dataset(name):
-    example = pd.read_csv(https://raw.githubusercontent.com/azzyan/finalassignment/main/weatherHistory.csv)
-    
+    data = None
     if name == 'Summary':
-        example = datasets.Summary()
+        data = datasets.load_Summary()
     elif name == 'Precip Type':
-        data = datasets.Precip_Type()
+        data = datasets.load_Precip_Type()
     elif name == 'Temperature (C)':
-        data = datasets.(Temperature (C))()
-   
+        data = datasets.load_Temperature (C)()
+    elif name == 'Apparent Temperature (C)':
+        data = datasets.load_Precip_Type()
+    elif name == 'Humidity':
+        data = datasets.load_Humidity()
+    elif name == 'Wind Speed (km/h)':
+        data = datasets.load_Precip_Type()
+    elif name == 'Wind Bearing (degrees)':
+        data = datasets.load_Precip_Type()    
+    elif name == 'Visibility (km)':
+        data = datasets.load_Precip_Type() 
+    elif name == 'Loud Cover':
+        data = datasets.load_Loud_Cover() 
     else:
-        name == 'Pressure (millibars)':
-        example = datasets.(Pressure_(millibars))()
-        
-    X = example.drop('Daily Summary', axis = 1)
-    y = example['Daily Summary']
-    return X, y
+        data = datasets.load_Pressure (millibars)()
+    X = data.data
+    y = data.target
+    return X, 
 
 def add_dataset_ui(choice_name):
     X=[]
