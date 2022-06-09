@@ -4,7 +4,7 @@ import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
 
 from PIL import Image
-image = Image.open('irisflower.jpg')
+image = Image.open('iris-flowers-plant-profile-5120188-hero-ccb44fcb101b4314b913ce5af09f9c1c.jpg')
 
 st.image(image, caption='Iris Flower')
 
