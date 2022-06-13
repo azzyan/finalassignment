@@ -33,6 +33,7 @@ choice = st.sidebar.radio(
 st.write(f"## You Have Selected <font color='Aquamarine'>{choice}</font> Dataset", unsafe_allow_html=True)
 
 file = pd.read_csv(https://raw.githubusercontent.com/azzyan/finalassignment/main/winequality-red.csv)
+
 def get_default_dataset(name):
     file = None
     if name == 'fixed acidity':
