@@ -31,7 +31,7 @@ choice = st.sidebar.radio(
     
 )
 
-st.write(f"## You Have Selected <font color='Aquamarine'>{choice}</font> Dataset", unsafe_allow_html=True)
+st.write(f"## You Have Selected <font color='Aquamarine'>{choice}</font> Dataset")
 
 def get_default_dataset(name):
     data = None
@@ -93,7 +93,7 @@ def add_dataset_ui(choice_name):
 
            y = LabelEncoder().fit_transform(y)
         else:
-           st.write(f"## <font color='Aquamarine'>Note: Please upload a CSV file to analyze the data.</font>", unsafe_allow_html=True)
+           st.write(f"## <font color='Aquamarine'>Note: Please upload a CSV file to analyze the data.</font>")
 
     return X,y, X_names, X1
 
