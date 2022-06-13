@@ -35,7 +35,7 @@ st.write(f"## You Have Selected <font color='Aquamarine'>{choice}</font> Dataset
 
 def get_default_dataset(name):
     data = None
-    if name == 'Fixed Acidity':
+    if name == 'fixed acidity':
         data = datasets.load_fixed_acidity()
     elif name == 'Wine':
         data = datasets.load_wine()
@@ -53,7 +53,7 @@ def add_dataset_ui(choice_name):
     if choice_name == 'Default':
        dataset_name = st.sidebar.selectbox(
             'Select Dataset',
-            ('Fixed Acidity', 'Breast Cancer', 'Wine')
+            ('fixed acidity', 'Breast Cancer', 'Wine')
         )
        X, y = get_default_dataset (dataset_name)
        X_names = X
@@ -62,7 +62,8 @@ def add_dataset_ui(choice_name):
             "Upload a CSV",
             type='csv'    )
         
-         if uploaded_file!=None:
+
+        if uploaded_file!=None:
            
            st.write(uploaded_file)
            data = pd.read_csv(uploaded_file)
