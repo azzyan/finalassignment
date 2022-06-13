@@ -69,8 +69,9 @@ def add_dataset_ui(choice_name):
     if choice_name == 'Default':
        dataset_name = st.sidebar.selectbox(
             'Select Dataset',
-            ('fixed acidity', 'volatile acidity', 'citric acid', 'residual sugar', 'chlorides', 'free sulfur dioxide', 'total sulfur dioxide', 'density', 'pH', 'sulphates', 'alcohol')
-        )
+            ('fixed acidity', 'volatile acidity', 'citric acid', 'residual sugar', 'chlorides', 
+             'free sulfur dioxide', 'total sulfur dioxide', 'density', 'pH', 'sulphates', 'alcohol') )
+    
        X, y = get_default_dataset (dataset_name)
        X_names = X
     else:
