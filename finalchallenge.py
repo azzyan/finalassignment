@@ -2,7 +2,6 @@ import streamlit as st
 import numpy as np 
 import pandas as pd
 
-#import matplotlib.pyplot as plt
 from matplotlib import pyplot as plt
 from sklearn import datasets
 from sklearn.model_selection import train_test_split
@@ -31,18 +30,35 @@ choice = st.sidebar.radio(
     
 )
 
-st.write(f"## You Have Selected <font color='Aquamarine'>{choice}</font> Dataset")
+st.write(f"## You Have Selected <font color='Aquamarine'>{choice}</font> Dataset", unsafe_allow_html=True))
 
+file = pd.read_csv(https://raw.githubusercontent.com/azzyan/finalassignment/main/winequality-red.csv)
 def get_default_dataset(name):
-    data = None
-    if name == 'Iris':
-        data = datasets.load_iris()
-    elif name == 'Wine':
-        data = datasets.load_wine()
+    file = None
+    if name == 'fixed acidity':
+        file = datasets.load_fixed_acidity()
+    elif name == 'volatile acidity':
+        file = datasets.volatile_acidity()
+    elif name == 'citric acid':
+        file = datasets.load_citric_acid()
+    elif name == 'residual sugar':
+        file = datasets.load_residual_sugar()
+    elif name == 'chlorides':
+        file = datasets.load_chlorides()
+    elif name == 'free sulfur dioxide':
+        file = datasets.load_free_sulfur_dioxide()
+    elif name == 'total sulfur dioxide':
+        file = datasets.load_total_sulfur_dioxide()    
+    elif name == 'density':
+        file = datasets.load_density() 
+    elif name == 'pH':
+        file = datasets.load_pH() 
+    elif name == 'sulphates':
+        file = datasets.load_sulphates() 
     else:
-        data = datasets.load_breast_cancer()
-    X = data.data
-    y = data.target
+        file = datasets.load_alcohol()
+    X = file.file
+    y = file.quality
     return X, y
 
 def add_dataset_ui(choice_name):
@@ -53,7 +69,8 @@ def add_dataset_ui(choice_name):
     if choice_name == 'Default':
        dataset_name = st.sidebar.selectbox(
             'Select Dataset',
-            ('Iris', 'Breast Cancer', 'Wine')
+            ('fixed acidity', 'volatile acidity', 'citric acid', 'residual sugar', 'chlorides', 'free sulfur dioxide', 
+             'total sulfur dioxide', 'density', 'pH', 'sulphates', 'alcohol' )
         )
        X, y = get_default_dataset (dataset_name)
        X_names = X
@@ -93,7 +110,7 @@ def add_dataset_ui(choice_name):
 
            y = LabelEncoder().fit_transform(y)
         else:
-           st.write(f"## <font color='Aquamarine'>Note: Please upload a CSV file to analyze the data.</font>")
+           st.write(f"## <font color='Aquamarine'>Note: Please upload a CSV file to analyze the data.</font>", unsafe_allow_html=True))
 
     return X,y, X_names, X1
 
