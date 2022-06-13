@@ -61,3 +61,39 @@ def add_dataset_ui(choice_name):
         uploaded_file = st.sidebar.file_uploader(
             "Upload a CSV",
             type='csv'    )
+        
+         if uploaded_file!=None:
+           
+           st.write(uploaded_file)
+           data = pd.read_csv(uploaded_file)
+  
+        
+           y_name = st.sidebar.selectbox(
+                    'Select Label @ y variable',
+                    sorted(data)
+                    )
+
+           X_names = st.sidebar.multiselect(
+                     'Select Predictors @ X variables.',
+                     sorted(data),
+                     default = sorted(data)[1],
+                     help = "You may select more than one predictor"
+                     )
+
+           y = data.loc[:,y_name]
+           X = data.loc[:,X_names]
+           X1 = X.select_dtypes(include=['object'])
+        
+           X2 = X.select_dtypes(exclude=['object'])
+
+           if sorted(X1) != []:
+              X1 = X1.apply(LabelEncoder().fit_transform)
+              X = pd.concat([X2,X1],axis=1)
+
+           y = LabelEncoder().fit_transform(y)
+        else:
+           st.write(f"## <font color='Aquamarine'>Note: Please upload a CSV file to analyze the data.</font>", unsafe_allow_html=True)
+
+    return X,y, X_names, X1
+
+X, y , X_names, cat_var= add_dataset_ui (choice)
