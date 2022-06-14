@@ -36,11 +36,9 @@ st.write(f"## You Have Selected <font color='Aquamarine'>{choice}</font> Dataset
 
 def get_default_dataset(name):
     file = pd.read_csv('https://raw.githubusercontent.com/azzyan/finalassignment/main/winequality-red.csv')
-    if name == 'fixed acidity':
-        file = datasets.load_fixed_acidity()
    
-    elif name == 'sulphates':
-        file = datasets.sulphates() 
+    if name == 'sulphates':
+       file = datasets.sulphates() 
     else:
         file = datasets.alcohol()
     X = file.drop('quality', axis = 1)
@@ -55,7 +53,7 @@ def add_dataset_ui(choice_name):
     if choice_name == 'Default':
        dataset_name = st.sidebar.selectbox(
             'Select Dataset',
-            ('fixed acidity', 'sulphates', 'alcohol' )
+            ( 'sulphates', 'alcohol' )
         )
        X, y = get_default_dataset (dataset_name)
        X_names = X
