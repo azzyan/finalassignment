@@ -58,7 +58,7 @@ def get_default_dataset(name):
         file = datasets.load_sulphates() 
     else:
         file = datasets.load_alcohol()
-    X = file.file
+    X = file.drop('quality', axis = 1)
     y = file.quality
     return X, y
 
