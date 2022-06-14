@@ -37,27 +37,27 @@ st.write(f"## You Have Selected <font color='Aquamarine'>{choice}</font> Dataset
 def get_default_dataset(name):
     file = pd.read_csv('https://raw.githubusercontent.com/azzyan/finalassignment/main/winequality-red.csv')
     if name == 'fixed acidity':
-        file = datasets.load_fixed_acidity()
+        file = datasets.fixed_acidity()
     elif name == 'volatile acidity':
         file = datasets.volatile_acidity()
     elif name == 'citric acid':
-        file = datasets.load_citric_acid()
+        file = datasets.citric_acid()
     elif name == 'residual sugar':
-        file = datasets.load_residual_sugar()
+        file = datasets.residual_sugar()
     elif name == 'chlorides':
-        file = datasets.load_chlorides()
+        file = datasets.chlorides()
     elif name == 'free sulfur dioxide':
-        file = datasets.load_free_sulfur_dioxide()
+        file = datasets.free_sulfur_dioxide()
     elif name == 'total sulfur dioxide':
-        file = datasets.load_total_sulfur_dioxide()    
+        file = datasets.total_sulfur_dioxide()    
     elif name == 'density':
-        file = datasets.load_density() 
+        file = datasets.density() 
     elif name == 'pH':
-        file = datasets.load_pH() 
+        file = datasets.pH() 
     elif name == 'sulphates':
-        file = datasets.load_sulphates() 
+        file = datasets.sulphates() 
     else:
-        file = datasets.load_alcohol()
+        file = datasets.alcohol()
     X = file.drop('quality', axis = 1)
     y = file.quality
     return X, y
