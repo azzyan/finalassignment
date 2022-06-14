@@ -37,7 +37,7 @@ st.write(f"## You Have Selected <font color='Aquamarine'>{choice}</font> Dataset
 def get_default_dataset(name):
     file = pd.read_csv('https://raw.githubusercontent.com/azzyan/finalassignment/main/winequality-red.csv')
     if name == 'fixed acidity':
-        file = datasets.fixed_acidity()
+        file = fixed_acidity()
     elif name == 'volatile acidity':
         file = datasets.volatile_acidity()
     elif name == 'citric acid':
