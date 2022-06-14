@@ -34,18 +34,35 @@ st.write(f"## You Have Selected <font color='Aquamarine'>{choice}</font> Dataset
 
 
 
-def get_default_dataset(name):
+def get_default_file(name):
     file = pd.read_csv('https://raw.githubusercontent.com/azzyan/finalassignment/main/winequality-red.csv')
-   
-    if name == 'sulphates':
-       file = datasets.sulphates() 
+    if name == 'fixed acidity':
+        file = datasets.load_fixed_acidity()
+    elif name == 'volatile acidity':
+        file = datasets.volatile_acidity()
+    elif name == 'citric acid':
+        file = datasets.citric_acid()
+    elif name == 'residual sugar':
+        file = datasets.residual_sugar()
+    elif name == 'chlorides':
+        file = datasets.chlorides()
+    elif name == 'free sulfur dioxide':
+        file = datasets.free_sulfur_dioxide()
+    elif name == 'total sulfur dioxide':
+        file = datasets.total_sulfur_dioxide()    
+    elif name == 'density':
+        file = datasets.density() 
+    elif name == 'pH':
+        file = datasets.pH() 
+    elif name == 'sulphates':
+        file = datasets.sulphates() 
     else:
         file = datasets.alcohol()
     X = file.drop('quality', axis = 1)
     y = file.quality
-    return X, y
+    return file
 
-def add_dataset_ui(choice_name):
+def add_file_ui(choice_name):
     X=[]
     y=[]
     X_names = []
@@ -53,9 +70,10 @@ def add_dataset_ui(choice_name):
     if choice_name == 'Default':
        dataset_name = st.sidebar.selectbox(
             'Select Dataset',
-            ( 'sulphates', 'alcohol' )
+            ('fixed acidity', 'volatile acidity', 'citric acid', 'residual sugar', 'chlorides', 'free sulfur dioxide', 
+             'total sulfur dioxide', 'density', 'pH', 'sulphates', 'alcohol' )
         )
-       X, y = get_default_dataset (dataset_name)
+       X, y = get_default_file (file_name)
        X_names = X
     else:
         uploaded_file = st.sidebar.file_uploader(
@@ -98,8 +116,3 @@ def add_dataset_ui(choice_name):
     return X,y, X_names, X1
 
 X, y , X_names, cat_var= add_dataset_ui (choice)
-
-
-
-
-
