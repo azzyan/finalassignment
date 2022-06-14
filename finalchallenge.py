@@ -38,22 +38,7 @@ def get_default_dataset(name):
     file = pd.read_csv('https://raw.githubusercontent.com/azzyan/finalassignment/main/winequality-red.csv')
     if name == 'fixed acidity':
         file = datasets.load_fixed_acidity()
-    elif name == 'volatile acidity':
-        file = datasets.volatile_acidity()
-    elif name == 'citric acid':
-        file = datasets.citric_acid()
-    elif name == 'residual sugar':
-        file = datasets.residual_sugar()
-    elif name == 'chlorides':
-        file = datasets.chlorides()
-    elif name == 'free sulfur dioxide':
-        file = datasets.free_sulfur_dioxide()
-    elif name == 'total sulfur dioxide':
-        file = datasets.total_sulfur_dioxide()    
-    elif name == 'density':
-        file = datasets.density() 
-    elif name == 'pH':
-        file = datasets.pH() 
+   
     elif name == 'sulphates':
         file = datasets.sulphates() 
     else:
@@ -70,8 +55,7 @@ def add_dataset_ui(choice_name):
     if choice_name == 'Default':
        dataset_name = st.sidebar.selectbox(
             'Select Dataset',
-            ('fixed acidity', 'volatile acidity', 'citric acid', 'residual sugar', 'chlorides', 'free sulfur dioxide', 
-             'total sulfur dioxide', 'density', 'pH', 'sulphates', 'alcohol' )
+            ('fixed acidity', 'sulphates', 'alcohol' )
         )
        X, y = get_default_dataset (dataset_name)
        X_names = X
