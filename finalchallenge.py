@@ -32,37 +32,37 @@ choice = st.sidebar.radio(
 
 st.write(f"## You Have Selected <font color='Aquamarine'>{choice}</font> Dataset", unsafe_allow_html=True)
 
+wine = pd.read_csv('https://raw.githubusercontent.com/azzyan/finalassignment/main/winequality-red.csv')
 
-
-def get_default_file(name):
-    file = pd.read_csv('https://raw.githubusercontent.com/azzyan/finalassignment/main/winequality-red.csv')
+def get_default_dataset(name):
+    wine = None
     if name == 'fixed acidity':
-        file = datasets.load_fixed_acidity()
+        wine = wine.load_fixed_acidity()
     elif name == 'volatile acidity':
-        file = datasets.volatile_acidity()
+        wine = wine.volatile_acidity()
     elif name == 'citric acid':
-        file = datasets.citric_acid()
+        wine = wine.citric_acid()
     elif name == 'residual sugar':
-        file = datasets.residual_sugar()
+        wine = datasets.residual_sugar()
     elif name == 'chlorides':
-        file = datasets.chlorides()
+        wine = datasets.chlorides()
     elif name == 'free sulfur dioxide':
-        file = datasets.free_sulfur_dioxide()
+        wine = datasets.free_sulfur_dioxide()
     elif name == 'total sulfur dioxide':
-        file = datasets.total_sulfur_dioxide()    
+        wine = datasets.total_sulfur_dioxide()    
     elif name == 'density':
-        file = datasets.density() 
+        wine = datasets.density() 
     elif name == 'pH':
-        file = datasets.pH() 
+        wine = datasets.pH() 
     elif name == 'sulphates':
-        file = datasets.sulphates() 
+        wine = datasets.sulphates() 
     else:
-        file = datasets.alcohol()
-    X = file.drop('quality', axis = 1)
-    y = file.quality
-    return file
+        wine = datasets.alcohol()
+    X = wine.drop('quality', axis = 1)
+    y = wine.quality
+    return X, y
 
-def add_file_ui(choice_name):
+def add_dataset_ui(choice_name):
     X=[]
     y=[]
     X_names = []
@@ -73,7 +73,7 @@ def add_file_ui(choice_name):
             ('fixed acidity', 'volatile acidity', 'citric acid', 'residual sugar', 'chlorides', 'free sulfur dioxide', 
              'total sulfur dioxide', 'density', 'pH', 'sulphates', 'alcohol' )
         )
-       X, y = get_default_file (file_name)
+       X, y = get_default_dataset (dataset_name)
        X_names = X
     else:
         uploaded_file = st.sidebar.file_uploader(
