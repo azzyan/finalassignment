@@ -111,7 +111,7 @@ def add_dataset_ui(choice_name):
 
            y = LabelEncoder().fit_transform(y)
         else:
-           st.write(f"## <font color='Aquamarine'>Note: Please upload a CSV file to analyze the data.</font>", unsafe_allow_html=True))
+           st.write(f"## <font color='Aquamarine'>Note: Please upload a CSV file to analyze the data.</font>", unsafe_allow_html=True)
 
     return X,y, X_names, X1
 
